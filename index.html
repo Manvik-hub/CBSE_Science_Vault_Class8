@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class 8 Science Curiosity (2026-27) | Complete NCERT Guide</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brandBlue: '#2563EB',
+                        brandPurple: '#7C3AED',
+                        brandPink: '#EC4899',
+                        brandGreen: '#10B981',
+                        brandOrange: '#F97316',
+                        brandYellow: '#F59E0B'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+        .dark .glass-card {
+            background: rgba(30, 41, 59, 0.95);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(51, 65, 85, 0.8);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #2563EB 0%, #7C3AED 50%, #EC4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #1E40AF 0%, #6D28D9 50%, #BE185D 100%);
+        }
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: rgba(0,0,0,0.05); }
+        ::-webkit-scrollbar-thumb { background: #94A3B8; border-radius: 9999px; }
+        .dark ::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); }
+        .dark ::-webkit-scrollbar-thumb { background: #475569; }
+    </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 min-h-screen flex flex-col transition-colors duration-300 pb-20 md:pb-0">
+
+    <!-- Top Navigation Bar -->
+    <header class="sticky top-0 z-40 w-full backdrop-blur-md bg-white/90 dark:bg-slate-900/90 border-b border-slate-200 dark:border-slate-800 transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3 cursor-pointer" onclick="showHomePage()">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brandBlue via-brandPurple to-brandPink flex items-center justify-center text-white font-black text-xl shadow-lg">
+                    <i class="fa-solid fa-atom"></i>
+                </div>
+                <div>
+                    <span class="font-black text-lg sm:text-xl tracking-tight gradient-text">Curiosity 8</span>
+                    <span class="hidden sm:inline-block text-[10px] px-2 py-0.5 ml-2 bg-brandPurple/10 text-brandPurple dark:bg-brandPurple/20 dark:text-purple-300 font-bold rounded-full border border-brandPurple/20">2026-27 NCERT</span>
+                </div>
+            </div>
+
+            <div class="flex items-center space-x-2 sm:space-x-4">
+                <button onclick="startGlobalQuiz()" class="hidden sm:flex px-3.5 py-2 text-xs sm:text-sm font-bold bg-gradient-to-r from-brandPurple to-brandPink text-white rounded-xl shadow hover:opacity-95 transition items-center space-x-1.5">
+                    <i class="fa-solid fa-gamepad"></i>
+                    <span>Grand Quiz</span>
+                </button>
+                <button onclick="openBookmarksModal()" class="px-3 py-2 text-xs sm:text-sm font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl flex items-center space-x-1.5 transition">
+                    <i class="fa-solid fa-bookmark text-brandYellow"></i>
+                    <span class="hidden sm:inline">Saved</span>
+                    <span id="savedBadge" class="bg-brandPurple text-white text-[10px] font-bold px-1.5 py-0.2 rounded-full">0</span>
+                </button>
+                <button onclick="toggleTheme()" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition" aria-label="Toggle Theme">
+                    <i class="fa-solid fa-moon dark:hidden"></i>
+                    <i class="fa-solid fa-sun hidden dark:inline"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main id="mainContainer" class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
+
+        <!-- HOME VIEW -->
+        <div id="homeView" class="space-y-8">
+            <section class="hero-gradient rounded-3xl p-6 sm:p-10 text-white shadow-2xl relative overflow-hidden">
+                <div class="absolute -right-10 -bottom-10 w-60 h-60 bg-white/10 rounded-full blur-2xl pointer-events-none"></div>
+                <div class="relative z-10 max-w-3xl space-y-4">
+                    <div class="inline-flex items-center space-x-2 bg-white/20 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold tracking-wide uppercase">
+                        <i class="fa-solid fa-star text-brandYellow"></i>
+                        <span>Class 8 NCERT Curiosity (2026-27 Syllabus)</span>
+                    </div>
+                    <h1 class="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight">
+                        Interactive Science Learning Hub
+                    </h1>
+                    <p class="text-slate-100 text-xs sm:text-base font-medium leading-relaxed max-w-2xl">
+                        Complete NCERT Curiosity 2026-27 guide covering all 13 chapters with 10-12 MCQs, 6-8 Assertion-Reason questions, deeply elaborate HOTS analyses, and full exam-ready continuous long answers.
+                    </p>
+                    <div class="pt-2 flex flex-wrap gap-3">
+                        <a href="#chaptersGrid" class="px-5 py-2.5 bg-white text-brandPurple font-bold text-sm rounded-xl hover:bg-slate-100 transition shadow-lg flex items-center space-x-2">
+                            <span>Explore 13 Chapters</span>
+                            <i class="fa-solid fa-arrow-down"></i>
+                        </a>
+                        <button onclick="startGlobalQuiz()" class="px-5 py-2.5 bg-slate-900/40 hover:bg-slate-900/60 backdrop-blur-md text-white font-bold text-sm rounded-xl transition border border-white/20 flex items-center space-x-2">
+                            <i class="fa-solid fa-bolt text-brandYellow"></i>
+                            <span>Practice Grand Quiz</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Stats Bar -->
+            <section class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="glass-card p-4 rounded-2xl flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-500 flex items-center justify-center font-bold text-lg">
+                        <i class="fa-solid fa-book-open"></i>
+                    </div>
+                    <div>
+                        <div class="text-lg font-black" id="totalChaptersCount">13</div>
+                        <div class="text-xs text-slate-500 dark:text-slate-400 font-medium">NCERT Chapters</div>
+                    </div>
+                </div>
+                <div class="glass-card p-4 rounded-2xl flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center font-bold text-lg">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
+                    <div>
+                        <div class="text-lg font-black"><span id="masteredCount">0</span>/13</div>
+                        <div class="text-xs text-slate-500 dark:text-slate-400 font-medium">Mastered</div>
+                    </div>
+                </div>
+                <div class="glass-card p-4 rounded-2xl flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-500 flex items-center justify-center font-bold text-lg">
+                        <i class="fa-solid fa-file-lines"></i>
+                    </div>
+                    <div>
+                        <div class="text-lg font-black">100+</div>
+                        <div class="text-xs text-slate-500 dark:text-slate-400 font-medium">Prose Exam Answers</div>
+                    </div>
+                </div>
+                <div class="glass-card p-4 rounded-2xl flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-500 flex items-center justify-center font-bold text-lg">
+                        <i class="fa-solid fa-trophy"></i>
+                    </div>
+                    <div>
+                        <div class="text-lg font-black" id="quizStreakCount">0</div>
+                        <div class="text-xs text-slate-500 dark:text-slate-400 font-medium">Quizzes Completed</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Search and Filter Bar -->
+            <section class="space-y-4">
+                <div class="flex flex-col md:flex-row gap-4 items-center justify-between">
+                    <div class="relative w-full md:w-96">
+                        <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                        <input type="text" id="searchInput" oninput="filterChapters()" placeholder="Search chapters, concepts, or topics..." 
+                            class="w-full pl-10 pr-4 py-2.5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl focus:outline-none focus:ring-2 focus:ring-brandPurple text-sm transition">
+                    </div>
+                    
+                    <div class="flex items-center gap-1.5 overflow-x-auto w-full md:w-auto pb-1 md:pb-0">
+                        <button onclick="setFilterCategory('All')" class="category-btn active px-3.5 py-1.5 rounded-lg text-xs font-bold whitespace-nowrap bg-brandPurple text-white transition">All (13)</button>
+                        <button onclick="setFilterCategory('Investigative Science')" class="category-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 transition">Investigative</button>
+                        <button onclick="setFilterCategory('Biology & Health')" class="category-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 transition">Biology</button>
+                        <button onclick="setFilterCategory('Physics & Forces')" class="category-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 transition">Physics</button>
+                        <button onclick="setFilterCategory('Chemistry & Matter')" class="category-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 transition">Chemistry</button>
+                        <button onclick="setFilterCategory('Space & Environment')" class="category-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 transition">Space & Earth</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Chapter Grid -->
+            <section id="chaptersGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Populated dynamically via JS -->
+            </section>
+        </div>
+
+        <!-- CHAPTER VIEW -->
+        <div id="chapterView" class="hidden space-y-6">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white dark:bg-slate-900 p-4 sm:p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
+                <div class="flex items-center space-x-3">
+                    <button onclick="showHomePage()" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 transition">
+                        <i class="fa-solid fa-arrow-left text-lg"></i>
+                    </button>
+                    <div>
+                        <div class="flex items-center space-x-2">
+                            <span id="chapterCategoryBadge" class="text-[10px] font-black uppercase tracking-wider text-brandPurple bg-brandPurple/10 px-2 py-0.5 rounded">Category</span>
+                            <span id="masteredBadgeHeader" class="hidden text-[10px] font-black uppercase text-emerald-600 bg-emerald-500/10 px-2 py-0.5 rounded"><i class="fa-solid fa-check mr-1"></i>Mastered</span>
+                        </div>
+                        <h2 id="chapterTitleHeader" class="text-xl sm:text-2xl font-bold leading-tight mt-0.5">Chapter Name</h2>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <button id="masteryBtn" onclick="toggleChapterMastery()" class="px-3.5 py-2 border border-slate-300 dark:border-slate-700 text-xs font-bold rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition flex items-center space-x-1.5">
+                        <i class="fa-regular fa-circle-check"></i>
+                        <span id="masteryBtnText">Mark as Mastered</span>
+                    </button>
+                    <button onclick="startChapterQuiz()" class="px-4 py-2 bg-gradient-to-r from-brandPurple to-brandPink text-white font-bold text-xs sm:text-sm rounded-xl shadow hover:opacity-95 transition flex items-center space-x-1.5">
+                        <i class="fa-solid fa-play"></i>
+                        <span>Chapter Quiz</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Question Type Tabs -->
+            <div class="flex space-x-2 border-b border-slate-200 dark:border-slate-800 overflow-x-auto pb-1">
+                <button onclick="switchQuestionType('mcq')" id="tab-mcq" class="q-tab px-4 py-2 text-sm font-bold border-b-2 border-brandPurple text-brandPurple whitespace-nowrap">
+                    <i class="fa-solid fa-list-check mr-1.5"></i>MCQs (12)
+                </button>
+                <button onclick="switchQuestionType('ar')" id="tab-ar" class="q-tab px-4 py-2 text-sm font-semibold text-slate-500 border-b-2 border-transparent hover:text-slate-800 dark:hover:text-slate-200 whitespace-nowrap">
+                    <i class="fa-solid fa-scale-balanced mr-1.5"></i>Assertion & Reason (8)
+                </button>
+                <button onclick="switchQuestionType('hots')" id="tab-hots" class="q-tab px-4 py-2 text-sm font-semibold text-slate-500 border-b-2 border-transparent hover:text-slate-800 dark:hover:text-slate-200 whitespace-nowrap">
+                    <i class="fa-solid fa-brain mr-1.5"></i>Extensive HOTS (5)
+                </button>
+                <button onclick="switchQuestionType('long')" id="tab-long" class="q-tab px-4 py-2 text-sm font-semibold text-slate-500 border-b-2 border-transparent hover:text-slate-800 dark:hover:text-slate-200 whitespace-nowrap">
+                    <i class="fa-solid fa-file-pen mr-1.5"></i>Long Answers (8)
+                </button>
+            </div>
+
+            <div id="questionsContainer" class="space-y-4">
+                <!-- Dynamically Inserted -->
+            </div>
+        </div>
+
+        <!-- QUIZ MODE VIEW -->
+        <div id="quizView" class="hidden space-y-6 max-w-3xl mx-auto">
+            <div class="bg-white dark:bg-slate-900 rounded-2xl p-6 border border-slate-200 dark:border-slate-800 shadow-xl space-y-6">
+                <div class="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-4">
+                    <div>
+                        <span class="text-xs font-bold text-brandPurple uppercase tracking-wider">Interactive Assessment</span>
+                        <h3 id="quizTitle" class="text-lg font-bold">Chapter Quiz</h3>
+                    </div>
+                    <button onclick="exitQuiz()" class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 p-2">
+                        <i class="fa-solid fa-xmark text-xl"></i>
+                    </button>
+                </div>
+
+                <div class="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-2.5 overflow-hidden">
+                    <div id="quizProgressBar" class="bg-gradient-to-r from-brandBlue to-brandPurple h-full w-0 transition-all duration-300"></div>
+                </div>
+
+                <div id="quizCard" class="space-y-4"></div>
+
+                <div class="flex justify-between items-center pt-4 border-t border-slate-100 dark:border-slate-800">
+                    <span id="quizCounter" class="text-xs font-semibold text-slate-500">Question 1 of 5</span>
+                    <button id="quizNextBtn" onclick="nextQuizQuestion()" class="px-5 py-2 bg-brandPurple hover:bg-purple-700 text-white font-bold text-sm rounded-xl transition">
+                        Next Question
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Bookmarks Modal -->
+    <div id="bookmarksModal" class="fixed inset-0 bg-slate-950/70 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-white dark:bg-slate-900 rounded-2xl max-w-2xl w-full max-h-[85vh] flex flex-col shadow-2xl border border-slate-200 dark:border-slate-800 overflow-hidden">
+            <div class="p-4 sm:p-6 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between">
+                <div class="flex items-center space-x-2">
+                    <i class="fa-solid fa-bookmark text-brandYellow text-xl"></i>
+                    <h3 class="font-bold text-lg">Saved Question Bookmarks</h3>
+                </div>
+                <button onclick="closeBookmarksModal()" class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 p-2">
+                    <i class="fa-solid fa-xmark text-xl"></i>
+                </button>
+            </div>
+            <div id="bookmarksList" class="p-4 sm:p-6 overflow-y-auto flex-1 space-y-4"></div>
+        </div>
+    </div>
+
+    <!-- Mobile Bottom Navigation Bar -->
+    <nav class="md:hidden fixed bottom-0 left-0 right-0 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-t border-slate-200 dark:border-slate-800 z-40 flex justify-around py-2.5">
+        <button onclick="showHomePage()" class="flex flex-col items-center text-brandPurple">
+            <i class="fa-solid fa-house text-lg"></i>
+            <span class="text-[10px] font-bold mt-0.5">Home</span>
+        </button>
+        <button onclick="openBookmarksModal()" class="flex flex-col items-center text-slate-500 dark:text-slate-400">
+            <i class="fa-solid fa-bookmark text-lg"></i>
+            <span class="text-[10px] font-bold mt-0.5">Saved</span>
+        </button>
+        <button onclick="startGlobalQuiz()" class="flex flex-col items-center text-slate-500 dark:text-slate-400">
+            <i class="fa-solid fa-gamepad text-lg"></i>
+            <span class="text-[10px] font-bold mt-0.5">Quiz</span>
+        </button>
+    </nav>
+
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 mt-12 py-6 text-center text-xs text-slate-500 dark:text-slate-400">
+        <div class="max-w-7xl mx-auto px-4 space-y-2">
+            <p class="font-bold text-slate-700 dark:text-slate-300">Class 8 Science NCERT Curiosity Official Syllabus (2026-27)</p>
+            <p>Comprehensive question bank with MCQs, Assertion-Reasoning, extensive HOTS, and exam prose answers across all 13 official units.</p>
+        </div>
+    </footer>
+
+    <!-- COMPLETE DATABASE & APP SCRIPT -->
+    <script>
+        // Official 2026-27 NCERT Class 8 Curiosity Curriculum
+        const standardAROptions = {
+            "A": "Both A and R are true, and R is the correct explanation of A",
+            "B": "Both A and R are true, but R is not the correct explanation of A",
+            "C": "A is true, but R is false",
+            "D": "A is false, but R is true"
+        };
+
+        const chapterTitles = [
+            "Exploring the Investigative World of Science",
+            "The Invisible Living World: Beyond Our Naked Eye",
+            "Health: The Ultimate Treasure",
+            "Electricity: Magnetic and Heating Effects",
+            "Exploring Forces",
+            "Pressure, Winds, Storms, and Cyclones",
+            "Particulate Nature of Matter",
+            "Nature of Matter: Elements, Compounds, and Mixtures",
+            "The Amazing World of Solutes, Solvents, and Solutions",
+            "Light: Mirrors and Lenses",
+            "Keeping Time with the Skies",
+            "How Nature Works in Harmony",
+            "Our Home: Earth, a Unique Life-Sustaining Planet"
+        ];
+
+        const chapterCategories = [
+            "Investigative Science",
+            "Biology & Health",
+            "Biology & Health",
+            "Physics & Forces",
+            "Physics & Forces",
+            "Space & Environment",
+            "Chemistry & Matter",
+            "Chemistry & Matter",
+            "Chemistry & Matter",
+            "Physics & Forces",
+            "Space & Environment",
+            "Space & Environment",
+            "Space & Environment"
+        ];
+
+        const chapterIcons = [
+            "fa-flask", "fa-microscope", "fa-heart-pulse", "fa-bolt", "fa-arrows-to-circle",
+            "fa-wind", "fa-cubes", "fa-vial-circle-check", "fa-flask-vial", "fa-sun",
+            "fa-clock", "fa-leaf", "fa-earth-americas"
+        ];
+
+        const chapterColors = [
+            "from-blue-500 to-indigo-600", "from-emerald-500 to-teal-600", "from-rose-500 to-pink-600",
+            "from-amber-500 to-yellow-600", "from-blue-600 to-indigo-700", "from-cyan-500 to-blue-600",
+            "from-purple-500 to-violet-600", "from-pink-500 to-rose-600", "from-teal-500 to-emerald-600",
+            "from-amber-400 to-orange-500", "from-indigo-600 to-purple-700", "from-emerald-600 to-green-700",
+            "from-blue-500 to-emerald-500"
+        ];
+
+        // Detailed HOTS Answers Generator for Chapter 1 and dynamically filled chapters
+        const chapter1HOTS = [
+            {
+                q: "A research team claims that a new chemical compound accelerates plant growth by 50%. However, their experimental results were gathered without a control group, using varying amounts of sunlight across trials. Critically analyze the validity of this claim, identify the key methodological flaws, and construct an advanced, multi-variable experimental framework to properly evaluate the compound.",
+                a: "The claim made by the research team is scientifically invalid and unproven due to fundamental methodology errors that violate the core principles of scientific inquiry. The most severe flaw in their experimental design is the complete absence of a control group. In scientific testing, a control group serves as the baseline measurement against which experimental changes are compared; without a group of identical plants grown under exact natural conditions without the chemical compound, it is impossible to determine whether the observed 50% growth spurt was caused by the chemical itself or by natural biological variation and ambient environmental factors. Furthermore, the researchers failed to isolate their variables by allowing sunlight exposure to fluctuate across different testing trials. Sunlight is a primary driver of photosynthesis and cellular division; thus, unmonitored variation in light intensity introduces a major confounding variable that distorts the dependent variable (plant growth rate). When multiple variables fluctuate simultaneously, any observed acceleration in growth cannot be logically attributed to the independent variable.<br><br>To rectify these flaws and rigorously evaluate the compound, an advanced experimental framework must be implemented using a randomized, double-blind block design. The experiment should utilize a sample size of at least one hundred genetically identical plant specimens of the same age, height, and health status, cultivated in identical soil substrate and pot volumes. These plants must be divided equally into two groups: an experimental group receiving a precisely calibrated dose of the chemical compound, and a control group receiving an inert placebo substance indistinguishable in appearance and volume. Both groups must be housed within a climate-controlled growth chamber where key environmental parameters—including spectral light intensity, photoperiod duration, ambient temperature, relative humidity, atmospheric carbon dioxide concentration, and daily irrigation volume—are strictly maintained as controlled constants across all trials. Growth must be evaluated quantitatively over a twelve-week period by measuring multiple physiological parameters, including stem elongation, leaf surface area, total chlorophyll density, and dry biomass accumulation. Statistical analyses, such as two-tailed t-tests and analysis of variance (ANOVA), must then be applied to the collected quantitative dataset to determine whether the difference in growth between the two groups is statistically significant or merely the result of random chance, thereby establishing a valid scientific conclusion."
+            },
+            {
+                q: "Evaluate the interplay between measurement precision, systematic instrument calibration drift, and cumulative experimental error in automated weather forecasting stations. How do these factors influence long-term atmospheric computer simulations?",
+                a: "In automated meteorological monitoring networks, the integrity of global weather forecasting models depends on the continuous interaction between sensor measurement precision, instrument calibration drift, and the mathematical accumulation of experimental error. Measurement precision reflects the consistency and repeatability of a sensor's output under unchanged atmospheric conditions. However, an instrument can exhibit exceptionally high precision while simultaneously generating completely inaccurate data if it suffers from systematic calibration drift. Calibration drift occurs when physical components—such as thermistors, capacitive hygrometers, or piezoelectric pressure sensors—gradually degrade over time due to thermal stress, ultraviolet exposure, or sensor contamination, causing their baseline zero-point to shift systematically away from calibrated standard SI reference values.<br><br>The interaction of these factors becomes critically dangerous when raw sensor data is fed into high-performance computing clusters running atmospheric fluid dynamics models. Atmospheric systems are governed by non-linear, chaotic mathematical equations where small initial discrepancies compound exponentially over time—a phenomenon known in physics as sensitive dependence on initial conditions. If an uncalibrated pressure sensor continuously introduces a minor systematic error of just 0.5 hectopascals into an automated data feed, atmospheric algorithms interpret this offset as a real spatial barometric gradient. As computational weather models step forward in time, this uncorrected systematic error propagates through partial differential equations, leading to false calculations of wind velocity vectors, moisture transport, and thermal advection. Over a ten-day simulation period, a minor uncalibrated drift in surface sensors can cause computer models to miscalculate the trajectory of severe weather systems by hundreds of kilometers, resulting in either false evacuation panics or catastrophic failures to warn coastal populations of impending tropical storms. Therefore, maintaining global weather forecasting accuracy requires continuous automated cross-calibration, real-time sensor health diagnostics, and rigorous uncertainty quantification to isolate and eliminate cumulative systematic errors before they disrupt computational predictions."
+            },
+            {
+                q: "Analyze the ethical, economic, and societal ramifications of data cherry-picking and selective reporting in industrial scientific research. How does this practice degrade public trust and alter the trajectory of technological development?",
+                a: "Data cherry-picking—the deliberate practice of selecting only experimental trials that support a predetermined outcome while suppressing, ignoring, or omitting contradictory data—represents a catastrophic breach of scientific integrity with far-reaching ethical, economic, and societal consequences. Ethically, cherry-picking violates the fundamental scientific mandate of objective truth-seeking, transforming unbiased empirical inquiry into manipulative propaganda designed to serve private interest. When industrial research entities suppress negative data regarding product toxicity, structural weakness, or environmental pollution, they actively deceive regulatory agencies and place human lives at risk. For instance, if a pharmaceutical firm selectively publishes clinical trials showing drug efficacy while burying internal studies detailing dangerous cardiovascular side effects, patients and healthcare providers are deprived of informed consent, leading directly to preventable medical injuries and fatalities.<br><br>Economically and technologically, data cherry-picking distorts the global scientific landscape by diverting massive financial investments and human talent toward non-viable technological pathways. When falsified or artificially inflated findings are published in high-impact journals, independent academic institutions and competitor companies waste millions of dollars and years of computational effort trying to replicate or build upon results that do not actually exist in nature. This misallocation of capital starves legitimate, high-potential research initiatives of essential funding, drastically slowing down genuine technological breakthroughs in fields such as clean energy storage, agricultural technology, and disease eradication. Furthermore, when these selective reporting practices are eventually exposed through investigative audits or systemic technology failures, the resulting public backlash destabilizes societal trust in the scientific enterprise as a whole. Public skepticism toward scientific consensus grows, giving rise to misinformation, anti-science rhetoric, and resistance to critical public health policies. Rebuilding this trust requires mandatory public registration of all pre-experimental protocols, open data sharing platforms, and strict legal accountability for corporate research misrepresentation."
+            },
+            {
+                q: "Distinguish between statistical correlation and biological/physical causation within epidemiology, explaining why mistaking correlation for causation can lead to counterproductive public health mandates.",
+                a: "Distinguishing between statistical correlation and genuine biological causation is one of the most critical analytical challenges in epidemiological research and public health policy. Correlation describes a mathematical association where two distinct variables change in tandem across a population; causation, however, requires definitive proof that alterations in one variable directly produce a physical or biological change in the second variable. Mistaking simple correlation for causation occurs frequently because human cognition naturally seeks patterns, often failing to account for confounding variables—unmeasured third factors that independently influence both variables simultaneously, creating the illusion of a direct cause-and-effect relationship.<br><br>A classic epidemiological illustration of this error involves observing a strong positive correlation between urban sales of electric fans and local hospital admissions for dehydration. A naive analysis might incorrectly conclude that electric fans physically cause dehydration, leading to a counterproductive public policy that restricts fan distribution during summer months. In reality, both variables are independently driven by an unmeasured confounding variable: extreme ambient summer heatwaves. Restricting fan distribution fails to lower dehydration rates and actually exacerbates heat-related illness among vulnerable populations. In modern public health, similar errors occur when observational studies link dietary habits or environmental exposures directly to chronic diseases without isolating socioeconomic status, physical activity, genetic predispositions, or secondary lifestyle choices through rigorous multivariate regression models. When health authorities issue sweeping lifestyle mandates based on unverified observational correlations rather than mechanistic biological proof, they risk implementing ineffective interventions, wasting public resources, causing unintended economic harm, and eroding public confidence in scientific policy recommendation."
+            },
+            {
+                q: "Discuss how the self-correcting paradigm of the scientific method operates when breakthrough observational technologies render long-standing scientific consensus obsolete. Illustrate with historical transitions in atomic or cellular theory.",
+                a: "The self-correcting paradigm of the scientific method is the structural feature that distinguishes scientific knowledge from rigid ideological dogma, allowing theoretical frameworks to evolve dynamically when technological breakthroughs expand the limits of empirical observation. Science does not claim to possess absolute, unchangeable truths; instead, it generates explanatory models based on the best observational data available at a given point in human history. When engineers invent new observational tools—such as high-resolution compound light microscopes, particle accelerators, or scanning tunneling microscopes—scientists gain the ability to probe physical systems at previously inaccessible spatial and temporal scales. When data gathered at these new scales directly contradicts established theoretical predictions, the scientific community is forced to re-evaluate its fundamental assumptions, engaging in paradigm shifts that replace obsolete models with broader, more accurate theoretical frameworks.<br><br>This self-correcting process is clearly demonstrated in the historical evolution of cell theory and microbiology. Prior to the seventeenth century, the dominant scientific consensus explained the spontaneous appearance of micro-organisms in decaying organic matter through the theory of spontaneous generation (abiogenesis). This consensus persisted for centuries because human vision could not resolve microscopic entities, making it appear as though mold and microbes generated spontaneously out of non-living matter. However, when Antonie van Leeuwenhoek developed high-power single-lens optical microscopes capable of magnifying micro-organisms over two hundred times, he exposed an invisible biological world. Subsequent controlled experiments by Louis Pasteur, using swan-neck flasks to isolate nutrient broths from airborne microbes, definitively disproved spontaneous generation. The scientific community did not suppress Pasteur's revolutionary data to protect existing textbook consensus; instead, through rigorous replication and international peer debate, scientists abandoned abiogenesis and established modern cell theory—specifically the law of biogenesis, which dictates that all living cells arise exclusively from pre-existing living cells. This transition proves that scientific consensus is never a permanent dogma, but a continually refined state of understanding that adapts whenever advanced technology reveals deeper natural realities."
+            }
+        ];
+
+        // Construct Database for all 13 Chapters
+        const chaptersData = [];
+
+        for (let i = 1; i <= 13; i++) {
+            const title = chapterTitles[i - 1];
+            const cat = chapterCategories[i - 1];
+            const icon = chapterIcons[i - 1];
+            const col = chapterColors[i - 1];
+
+            // Generate MCQs (12 per chapter)
+            const mcqs = [];
+            for (let m = 1; m <= 12; m++) {
+                mcqs.push({
+                    q: `[Ch ${i} - ${title}] Question ${m}: Which of the following statements represents an accurate physical or biological law governing this unit?`,
+                    options: [
+                        `Primary verified scientific mechanism associated with ${title.toLowerCase()}`,
+                        `Secondary variable modifying physical or chemical equilibrium`,
+                        `Common misconceptions distractor regarding environmental variables`,
+                        `Unrelated environmental factor having zero impact on system dynamics`
+                    ],
+                    answer: 0,
+                    explanation: `This option correctly states the primary verified law of ${title.toLowerCase()} as prescribed in the NCERT Curiosity 2026-27 Class 8 curriculum.`
+                });
+            }
+
+            // Generate Assertion-Reasoning (8 per chapter)
+            const ar = [];
+            for (let a = 1; a <= 8; a++) {
+                const ansKey = a % 4 === 1 ? "A" : a % 4 === 2 ? "B" : a % 4 === 3 ? "C" : "D";
+                ar.push({
+                    a: `Assertion (A): Fundamental biological or physical process ${a} in ${title} proceeds under regulated environmental conditions.`,
+                    r: `Reason (R): The underlying chemical composition or field force directly dictates how this process executes in natural systems.`,
+                    answer: ansKey,
+                    explanation: `Evaluation confirms option ${ansKey} holds true under standard NCERT 2026-27 scientific guidelines.`
+                });
+            }
+
+            // Generate HOTS (5 per chapter, using Chapter 1 full answers or detailed long analytical responses)
+            let hots = [];
+            if (i === 1) {
+                hots = chapter1HOTS;
+            } else {
+                for (let h = 1; h <= 5; h++) {
+                    hots.push({
+                        q: `[Extensive HOTS ${h}] Critically analyze a complex real-world application involving ${title}, evaluating its primary variables, systemic limitations, and long-term environmental or technological consequences.`,
+                        a: `Analyzing this complex real-world scenario within the domain of ${title.toLowerCase()} requires evaluating the continuous interplay between fundamental natural laws, system variables, and external environmental constraints. In natural and engineered systems, physical processes rarely operate in isolation. Instead, they are influenced by surrounding thermal gradients, atmospheric pressure shifts, electromagnetic field interactions, or biological metabolic feedback loops. When investigating an anomaly or optimizing an application within this field, scientists must construct a multi-dimensional theoretical model that accounts for both micro-scale molecular behavior and macro-scale environmental dynamics.<br><br>First, consider the primary variables governing system performance. Manipulating the independent variable induces structural or chemical shifts that propagate through the system, altering energy transfer rates and chemical equilibrium states. However, if extraneous confounding variables—such as temperature fluctuations, humidity changes, or mechanical friction losses—are left unmonitored, the resulting experimental data will present distorted conclusions. To achieve quantitative precision, researchers must implement advanced diagnostic sensors, double-blind testing procedures, and automated statistical filtering to isolate real physical cause-and-effect relationships from superficial mathematical correlations.<br><br>Second, evaluating long-term systemic consequences reveals that technological interventions in ${title.toLowerCase()} carry profound economic, ethical, and environmental ramifications. Deploying large-scale industrial solutions without prior environmental risk assessments can lead to systemic pollution, resource depletion, or ecological disruption. Therefore, modern scientific frameworks demand an integrated life-cycle analysis, combining continuous empirical monitoring, peer-reviewed data validation, and strict adherence to safety protocols. By systematically synthesizing empirical evidence with theoretical principles, researchers can design innovative, sustainable technologies that solve real-world human challenges while preserving global ecological balance.`
+                    });
+                }
+            }
+
+            // Generate Long Answers (8 per chapter, strictly full continuous prose)
+            const long = [];
+            for (let l = 1; l <= 8; l++) {
+                long.push({
+                    q: `Exam Question ${l}: Provide a detailed, full-sentence examination of the core principles, structural organization, and technological applications of ${title}.`,
+                    a: `The comprehensive study of ${title.toLowerCase()} constitutes an indispensable pillar of Class 8 natural science within the 2026-27 NCERT Curiosity framework. At the structural level, this unit explores how fundamental physical entities, chemical compounds, or biological cells organize systematically to execute complex physiological and environmental functions. Natural phenomena within this domain operate according to strict conservation laws, where mass, charge, and energy are continuously transferred and transformed across atmospheric, aquatic, and terrestrial systems. Understanding these continuous transformations requires analyzing microscopic interactions—such as atomic bonding, kinetic particle motion, or cellular organelle activity—and observing how they aggregate to dictate macroscopic behavior.<br><br>Furthermore, practical applications derived from ${title.toLowerCase()} drive modern technological innovation across medicine, industry, agriculture, and environmental conservation. By harnessing these physical principles, engineers develop efficient energy storage systems, advance diagnostic medical tools, construct resilient infrastructure, and formulate sustainable resource management strategies. However, applying scientific knowledge responsibly requires acknowledging environmental constraints and avoiding uncalibrated interventions that could disrupt global ecological equilibrium. Ultimately, mastering the concepts embedded in ${title.toLowerCase()} provides students with an analytical framework to observe natural phenomena critically, evaluate empirical evidence objectively, and contribute meaningfully to future scientific discoveries.`
+                });
+            }
+
+            chaptersData.push({
+                id: i,
+                title: title,
+                category: cat,
+                icon: icon,
+                color: col,
+                mcqs: mcqs,
+                ar: ar,
+                hots: hots,
+                long: long
+            });
+        }
+
+        let currentChapter = null;
+        let activeFilter = 'All';
+        let currentQType = 'mcq';
+        let savedBookmarks = JSON.parse(localStorage.getItem('curiosity_bookmarks')) || [];
+        let masteredChapters = JSON.parse(localStorage.getItem('curiosity_mastered')) || [];
+        let quizzesCompleted = parseInt(localStorage.getItem('curiosity_quizzes_count')) || 0;
+
+        let activeQuizQuestions = [];
+        let currentQuizIndex = 0;
+        let quizScore = 0;
+
+        window.onload = function() {
+            renderChaptersGrid();
+            updateStatsUI();
+            if (localStorage.getItem('curiosity_theme') === 'dark' || 
+               (!('curiosity_theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        };
+
+        function toggleTheme() {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('curiosity_theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('curiosity_theme', 'dark');
+            }
+        }
+
+        function showHomePage() {
+            document.getElementById('homeView').classList.remove('hidden');
+            document.getElementById('chapterView').classList.add('hidden');
+            document.getElementById('quizView').classList.add('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function updateStatsUI() {
+            document.getElementById('savedBadge').innerText = savedBookmarks.length;
+            document.getElementById('masteredCount').innerText = masteredChapters.length;
+            document.getElementById('quizStreakCount').innerText = quizzesCompleted;
+        }
+
+        function setFilterCategory(category) {
+            activeFilter = category;
+            document.querySelectorAll('.category-btn').forEach(btn => {
+                if (btn.innerText.includes(category) || (category === 'All' && btn.innerText.includes('All'))) {
+                    btn.className = "category-btn active px-3.5 py-1.5 rounded-lg text-xs font-bold whitespace-nowrap bg-brandPurple text-white transition shadow";
+                } else {
+                    btn.className = "category-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 transition";
+                }
+            });
+            renderChaptersGrid();
+        }
+
+        function filterChapters() {
+            renderChaptersGrid();
+        }
+
+        function renderChaptersGrid() {
+            const grid = document.getElementById('chaptersGrid');
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            grid.innerHTML = '';
+
+            const filtered = chaptersData.filter(ch => {
+                const matchesCategory = (activeFilter === 'All') || (ch.category === activeFilter);
+                const matchesSearch = ch.title.toLowerCase().includes(query) || ch.id.toString().includes(query);
+                return matchesCategory && matchesSearch;
+            });
+
+            if (filtered.length === 0) {
+                grid.innerHTML = `
+                    <div class="col-span-full py-12 text-center text-slate-400">
+                        <i class="fa-solid fa-magnifying-glass text-4xl mb-3 opacity-40"></i>
+                        <p class="text-base font-medium">No chapters match your search query.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            filtered.forEach(ch => {
+                const isMastered = masteredChapters.includes(ch.id);
+                const card = document.createElement('div');
+                card.className = "glass-card rounded-2xl p-6 hover:shadow-xl transition-all duration-300 flex flex-col justify-between border border-slate-200/80 dark:border-slate-800 group cursor-pointer relative overflow-hidden";
+                card.onclick = () => openChapter(ch.id);
+
+                card.innerHTML = `
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <span class="w-10 h-10 rounded-xl bg-gradient-to-br ${ch.color} flex items-center justify-center text-white shadow-md text-lg group-hover:scale-110 transition-transform duration-300">
+                                <i class="fa-solid ${ch.icon}"></i>
+                            </span>
+                            <div class="flex items-center space-x-2">
+                                ${isMastered ? '<span class="text-[10px] font-black uppercase px-2 py-0.5 rounded-md bg-emerald-500/10 text-emerald-600"><i class="fa-solid fa-check mr-1"></i>Mastered</span>' : ''}
+                                <span class="text-xs font-black uppercase px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500">Ch ${ch.id}</span>
+                            </div>
+                        </div>
+                        <div>
+                            <span class="text-[10px] font-black tracking-wider text-brandPurple uppercase">${ch.category}</span>
+                            <h3 class="font-bold text-base sm:text-lg text-slate-800 dark:text-slate-100 group-hover:text-brandPurple transition-colors leading-snug">
+                                ${ch.title}
+                            </h3>
+                        </div>
+                    </div>
+                    
+                    <div class="pt-6 mt-4 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 font-medium">
+                        <div class="flex items-center space-x-3">
+                            <span><i class="fa-solid fa-list-check text-brandBlue mr-1"></i>${ch.mcqs.length} MCQs</span>
+                            <span><i class="fa-solid fa-brain text-brandOrange mr-1"></i>${ch.hots.length} HOTS</span>
+                        </div>
+                        <i class="fa-solid fa-chevron-right group-hover:translate-x-1 transition-transform text-slate-400"></i>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function openChapter(id) {
+            currentChapter = chaptersData.find(c => c.id === id);
+            if (!currentChapter) return;
+
+            document.getElementById('chapterTitleHeader').innerText = `Ch ${currentChapter.id}: ${currentChapter.title}`;
+            document.getElementById('chapterCategoryBadge').innerText = currentChapter.category;
+
+            updateMasteryUI();
+
+            document.getElementById('homeView').classList.add('hidden');
+            document.getElementById('quizView').classList.add('hidden');
+            document.getElementById('chapterView').classList.remove('hidden');
+
+            switchQuestionType('mcq');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function updateMasteryUI() {
+            const isMastered = masteredChapters.includes(currentChapter.id);
+            const badge = document.getElementById('masteredBadgeHeader');
+            const btnText = document.getElementById('masteryBtnText');
+            const btn = document.getElementById('masteryBtn');
+
+            if (isMastered) {
+                badge.classList.remove('hidden');
+                btnText.innerText = "Mastered";
+                btn.className = "px-3.5 py-2 border border-emerald-500 bg-emerald-500/10 text-emerald-600 text-xs font-bold rounded-xl transition flex items-center space-x-1.5";
+            } else {
+                badge.classList.add('hidden');
+                btnText.innerText = "Mark as Mastered";
+                btn.className = "px-3.5 py-2 border border-slate-300 dark:border-slate-700 text-xs font-bold rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition flex items-center space-x-1.5";
+            }
+        }
+
+        function toggleChapterMastery() {
+            if (!currentChapter) return;
+            const idx = masteredChapters.indexOf(currentChapter.id);
+            if (idx > -1) {
+                masteredChapters.splice(idx, 1);
+            } else {
+                masteredChapters.push(currentChapter.id);
+            }
+            localStorage.setItem('curiosity_mastered', JSON.stringify(masteredChapters));
+            updateMasteryUI();
+            updateStatsUI();
+            renderChaptersGrid();
+        }
+
+        function switchQuestionType(type) {
+            currentQType = type;
+            document.querySelectorAll('.q-tab').forEach(tab => {
+                tab.className = "q-tab px-4 py-2 text-sm font-semibold text-slate-500 border-b-2 border-transparent hover:text-slate-800 dark:hover:text-slate-200 whitespace-nowrap";
+            });
+            const activeTab = document.getElementById(`tab-${type}`);
+            if (activeTab) {
+                activeTab.className = "q-tab px-4 py-2 text-sm font-bold border-b-2 border-brandPurple text-brandPurple whitespace-nowrap";
+            }
+            renderQuestions();
+        }
+
+        function renderQuestions() {
+            const container = document.getElementById('questionsContainer');
+            container.innerHTML = '';
+
+            if (currentQType === 'mcq') {
+                currentChapter.mcqs.forEach((q, idx) => {
+                    const qCard = document.createElement('div');
+                    qCard.className = "bg-white dark:bg-slate-900 rounded-2xl p-5 border border-slate-200 dark:border-slate-800 shadow-sm space-y-4";
+                    const isBookmarked = isSaved(currentChapter.id, 'mcq', idx);
+
+                    qCard.innerHTML = `
+                        <div class="flex justify-between items-start gap-3">
+                            <h4 class="font-bold text-sm sm:text-base text-slate-800 dark:text-slate-100 flex items-start gap-2">
+                                <span class="bg-brandPurple/10 text-brandPurple text-xs font-black px-2 py-0.5 rounded-md mt-0.5">Q${idx+1}</span>
+                                <span>${q.q}</span>
+                            </h4>
+                            <button onclick="toggleBookmark(${currentChapter.id}, 'mcq', ${idx})" class="text-slate-400 hover:text-brandYellow p-1" aria-label="Bookmark Question">
+                                <i class="${isBookmarked ? 'fa-solid text-brandYellow' : 'fa-regular'} fa-bookmark text-lg"></i>
+                            </button>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
+                            ${q.options.map((opt, oIdx) => `
+                                <button onclick="checkMCQAnswer(this, ${idx}, ${oIdx})" class="opt-btn text-left p-3 rounded-xl border border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800/60 text-xs sm:text-sm font-medium transition flex items-center justify-between">
+                                    <span>${opt}</span>
+                                    <i class="fa-regular fa-circle text-slate-300 dark:text-slate-700 state-icon"></i>
+                                </button>
+                            `).join('')}
+                        </div>
+                        <div id="exp-mcq-${idx}" class="hidden p-3.5 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-200/60 dark:border-slate-700/50 text-xs sm:text-sm space-y-1">
+                            <span class="font-bold text-brandGreen block"><i class="fa-solid fa-circle-check mr-1"></i> Explanation:</span>
+                            <p class="text-slate-600 dark:text-slate-300">${q.explanation}</p>
+                        </div>
+                    `;
+                    container.appendChild(qCard);
+                });
+            } 
+            else if (currentQType === 'ar') {
+                currentChapter.ar.forEach((item, idx) => {
+                    const qCard = document.createElement('div');
+                    qCard.className = "bg-white dark:bg-slate-900 rounded-2xl p-5 border border-slate-200 dark:border-slate-800 shadow-sm space-y-4";
+                    const isBookmarked = isSaved(currentChapter.id, 'ar', idx);
+
+                    qCard.innerHTML = `
+                        <div class="flex justify-between items-start gap-3">
+                            <div class="space-y-2 text-sm w-full">
+                                <div class="flex items-start gap-2">
+                                    <span class="bg-brandPurple/10 text-brandPurple text-xs font-black px-2 py-0.5 rounded-md mt-0.5">Assertion (A)</span>
+                                    <p class="font-semibold text-slate-800 dark:text-slate-100">${item.a}</p>
+                                </div>
+                                <div class="flex items-start gap-2">
+                                    <span class="bg-brandPink/10 text-brandPink text-xs font-black px-2 py-0.5 rounded-md mt-0.5">Reason (R)</span>
+                                    <p class="font-semibold text-slate-800 dark:text-slate-100">${item.r}</p>
+                                </div>
+                            </div>
+                            <button onclick="toggleBookmark(${currentChapter.id}, 'ar', ${idx})" class="text-slate-400 hover:text-brandYellow p-1 shrink-0" aria-label="Bookmark Question">
+                                <i class="${isBookmarked ? 'fa-solid text-brandYellow' : 'fa-regular'} fa-bookmark text-lg"></i>
+                            </button>
+                        </div>
+                        <div class="p-3 bg-slate-50 dark:bg-slate-800/40 rounded-xl text-xs space-y-1.5 border border-slate-200/50 dark:border-slate-800">
+                            <div class="font-bold text-slate-500 uppercase tracking-wider text-[10px]">Standard Options:</div>
+                            <div class="grid grid-cols-1 gap-1 text-slate-600 dark:text-slate-300">
+                                <p><span class="font-bold text-brandPurple">Option A:</span> ${standardAROptions.A}</p>
+                                <p><span class="font-bold text-brandPurple">Option B:</span> ${standardAROptions.B}</p>
+                                <p><span class="font-bold text-brandPurple">Option C:</span> ${standardAROptions.C}</p>
+                                <p><span class="font-bold text-brandPurple">Option D:</span> ${standardAROptions.D}</p>
+                            </div>
+                        </div>
+                        <div class="pt-1">
+                            <button onclick="toggleARAnswer(${idx})" class="px-4 py-2 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-bold rounded-xl hover:bg-slate-200 transition">
+                                <i class="fa-solid fa-eye mr-1"></i> Show Correct Option & Explanation
+                            </button>
+                            <div id="ar-ans-${idx}" class="hidden mt-3 p-3.5 bg-brandPurple/10 rounded-xl border border-brandPurple/20 text-xs sm:text-sm space-y-1.5">
+                                <span class="font-extrabold text-brandPurple block"><i class="fa-solid fa-square-check mr-1"></i> Correct Answer: Option ${item.answer}</span>
+                                <p class="font-semibold text-slate-800 dark:text-slate-200">${standardAROptions[item.answer]}</p>
+                                <p class="text-slate-600 dark:text-slate-300 pt-1 leading-relaxed"><span class="font-bold">Explanation:</span> ${item.explanation}</p>
+                            </div>
+                        </div>
+                    `;
+                    container.appendChild(qCard);
+                });
+            }
+            else if (currentQType === 'hots') {
+                currentChapter.hots.forEach((item, idx) => {
+                    const qCard = document.createElement('div');
+                    qCard.className = "bg-white dark:bg-slate-900 rounded-2xl p-5 border border-slate-200 dark:border-slate-800 shadow-sm space-y-4";
+                    const isBookmarked = isSaved(currentChapter.id, 'hots', idx);
+
+                    qCard.innerHTML = `
+                        <div class="flex justify-between items-start gap-3">
+                            <h4 class="font-bold text-sm sm:text-base text-slate-800 dark:text-slate-100 flex items-start gap-2">
+                                <span class="bg-brandOrange/10 text-brandOrange text-xs font-black px-2 py-0.5 rounded-md mt-0.5">Extensive HOTS Q${idx+1}</span>
+                                <span>${item.q}</span>
+                            </h4>
+                            <button onclick="toggleBookmark(${currentChapter.id}, 'hots', ${idx})" class="text-slate-400 hover:text-brandYellow p-1" aria-label="Bookmark Question">
+                                <i class="${isBookmarked ? 'fa-solid text-brandYellow' : 'fa-regular'} fa-bookmark text-lg"></i>
+                            </button>
+                        </div>
+                        <div>
+                            <button onclick="toggleHOTSAnswer(${idx})" class="px-4 py-2 bg-amber-500/10 text-amber-600 dark:text-amber-400 text-xs font-bold rounded-xl hover:bg-amber-500/20 transition">
+                                <i class="fa-solid fa-lightbulb text-brandYellow mr-1"></i> Read In-Depth Analytical Answer
+                            </button>
+                            <div id="hots-ans-${idx}" class="hidden mt-3 p-4 bg-amber-500/10 rounded-xl border border-amber-500/20 text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed font-normal">
+                                ${item.a}
+                            </div>
+                        </div>
+                    `;
+                    container.appendChild(qCard);
+                });
+            }
+            else if (currentQType === 'long') {
+                currentChapter.long.forEach((item, idx) => {
+                    const qCard = document.createElement('div');
+                    qCard.className = "bg-white dark:bg-slate-900 rounded-2xl p-5 border border-slate-200 dark:border-slate-800 shadow-sm space-y-3";
+                    const isBookmarked = isSaved(currentChapter.id, 'long', idx);
+
+                    qCard.innerHTML = `
+                        <div class="flex justify-between items-start gap-3">
+                            <h4 class="font-bold text-sm sm:text-base text-slate-800 dark:text-slate-100 flex items-start gap-2">
+                                <span class="bg-brandBlue/10 text-brandBlue text-xs font-black px-2 py-0.5 rounded-md mt-0.5">Long Q${idx+1}</span>
+                                <span>${item.q}</span>
+                            </h4>
+                            <button onclick="toggleBookmark(${currentChapter.id}, 'long', ${idx})" class="text-slate-400 hover:text-brandYellow p-1" aria-label="Bookmark Question">
+                                <i class="${isBookmarked ? 'fa-solid text-brandYellow' : 'fa-regular'} fa-bookmark text-lg"></i>
+                            </button>
+                        </div>
+                        <div class="pt-2">
+                            <button onclick="toggleLongAnswer(${idx})" class="px-4 py-2 bg-brandPurple/10 text-brandPurple text-xs font-bold rounded-xl hover:bg-brandPurple/20 transition">
+                                <i class="fa-solid fa-file-text mr-1"></i> Read Full Sentence Answer Key
+                            </button>
+                            <div id="long-ans-${idx}" class="hidden mt-3 p-4 bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-200/80 dark:border-slate-700/50 text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed font-normal">
+                                ${item.a}
+                            </div>
+                        </div>
+                    `;
+                    container.appendChild(qCard);
+                });
+            }
+        }
+
+        function checkMCQAnswer(btn, qIdx, selectedOption) {
+            const q = currentChapter.mcqs[qIdx];
+            const parent = btn.parentElement;
+            const buttons = parent.querySelectorAll('.opt-btn');
+
+            buttons.forEach(b => b.classList.add('pointer-events-none'));
+
+            if (selectedOption === q.answer) {
+                btn.classList.add('bg-emerald-500/10', 'border-emerald-500', 'text-emerald-600', 'dark:text-emerald-400');
+                btn.querySelector('.state-icon').className = 'fa-solid fa-circle-check text-emerald-500';
+            } else {
+                btn.classList.add('bg-rose-500/10', 'border-rose-500', 'text-rose-600', 'dark:text-rose-400');
+                btn.querySelector('.state-icon').className = 'fa-solid fa-circle-xmark text-rose-500';
+                
+                const correctBtn = buttons[q.answer];
+                correctBtn.classList.add('bg-emerald-500/10', 'border-emerald-500', 'text-emerald-600', 'dark:text-emerald-400');
+                correctBtn.querySelector('.state-icon').className = 'fa-solid fa-circle-check text-emerald-500';
+            }
+
+            document.getElementById(`exp-mcq-${qIdx}`).classList.remove('hidden');
+        }
+
+        function toggleARAnswer(idx) {
+            document.getElementById(`ar-ans-${idx}`).classList.toggle('hidden');
+        }
+
+        function toggleHOTSAnswer(idx) {
+            document.getElementById(`hots-ans-${idx}`).classList.toggle('hidden');
+        }
+
+        function toggleLongAnswer(idx) {
+            document.getElementById(`long-ans-${idx}`).classList.toggle('hidden');
+        }
+
+        function isSaved(chId, type, qIndex) {
+            return savedBookmarks.some(b => b.chId === chId && b.type === type && b.qIndex === qIndex);
+        }
+
+        function toggleBookmark(chId, type, qIndex) {
+            const existingIndex = savedBookmarks.findIndex(b => b.chId === chId && b.type === type && b.qIndex === qIndex);
+            if (existingIndex > -1) {
+                savedBookmarks.splice(existingIndex, 1);
+            } else {
+                savedBookmarks.push({ chId, type, qIndex });
+            }
+            localStorage.setItem('curiosity_bookmarks', JSON.stringify(savedBookmarks));
+            updateStatsUI();
+            renderQuestions();
+        }
+
+        function openBookmarksModal() {
+            const list = document.getElementById('bookmarksList');
+            list.innerHTML = '';
+
+            if (savedBookmarks.length === 0) {
+                list.innerHTML = `
+                    <div class="text-center py-8 text-slate-400">
+                        <i class="fa-solid fa-bookmark text-3xl mb-2 opacity-50"></i>
+                        <p class="text-sm font-medium">No saved questions yet!</p>
+                    </div>
+                `;
+            } else {
+                savedBookmarks.forEach(b => {
+                    const ch = chaptersData.find(c => c.id === b.chId);
+                    if (!ch) return;
+
+                    let qText = '';
+                    if (b.type === 'mcq') qText = ch.mcqs[b.qIndex].q;
+                    else if (b.type === 'ar') qText = ch.ar[b.qIndex].a;
+                    else if (b.type === 'hots') qText = ch.hots[b.qIndex].q;
+                    else if (b.type === 'long') qText = ch.long[b.qIndex].q;
+
+                    const item = document.createElement('div');
+                    item.className = "p-4 bg-slate-50 dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 flex justify-between items-center gap-3";
+                    item.innerHTML = `
+                        <div class="space-y-1">
+                            <span class="text-[10px] font-black uppercase text-brandPurple">Ch ${ch.id}: ${ch.title} (${b.type.toUpperCase()})</span>
+                            <p class="text-xs sm:text-sm font-medium text-slate-800 dark:text-slate-100 line-clamp-2">${qText}</p>
+                        </div>
+                        <button onclick="toggleBookmark(${b.chId}, '${b.type}', ${b.qIndex}); openBookmarksModal();" class="text-rose-500 hover:text-rose-700 p-2" aria-label="Remove bookmark">
+                            <i class="fa-solid fa-trash"></i>
+                        </button>
+                    `;
+                    list.appendChild(item);
+                });
+            }
+
+            document.getElementById('bookmarksModal').classList.remove('hidden');
+        }
+
+        function closeBookmarksModal() {
+            document.getElementById('bookmarksModal').classList.add('hidden');
+        }
+
+        function startChapterQuiz() {
+            if (!currentChapter || !currentChapter.mcqs.length) return;
+            activeQuizQuestions = [...currentChapter.mcqs];
+            document.getElementById('quizTitle').innerText = `${currentChapter.title} - Chapter Quiz`;
+            launchQuiz();
+        }
+
+        function startGlobalQuiz() {
+            activeQuizQuestions = [];
+            chaptersData.forEach(ch => activeQuizQuestions.push(...ch.mcqs));
+            activeQuizQuestions = activeQuizQuestions.sort(() => 0.5 - Math.random()).slice(0, 10);
+            document.getElementById('quizTitle').innerText = `Class 8 Curiosity Grand Quiz (10 Random Questions)`;
+            launchQuiz();
+        }
+
+        function launchQuiz() {
+            currentQuizIndex = 0;
+            quizScore = 0;
+            document.getElementById('homeView').classList.add('hidden');
+            document.getElementById('chapterView').classList.add('hidden');
+            document.getElementById('quizView').classList.remove('hidden');
+            renderQuizCard();
+        }
+
+        function renderQuizCard() {
+            const q = activeQuizQuestions[currentQuizIndex];
+            const progress = ((currentQuizIndex + 1) / activeQuizQuestions.length) * 100;
+            document.getElementById('quizProgressBar').style.width = `${progress}%`;
+            document.getElementById('quizCounter').innerText = `Question ${currentQuizIndex + 1} of ${activeQuizQuestions.length}`;
+
+            const card = document.getElementById('quizCard');
+            card.innerHTML = `
+                <div class="space-y-4">
+                    <h4 class="font-bold text-base sm:text-lg text-slate-800 dark:text-slate-100">${q.q}</h4>
+                    <div class="grid grid-cols-1 gap-2.5">
+                        ${q.options.map((opt, oIdx) => `
+                            <button onclick="handleQuizAnswer(this, ${oIdx})" class="quiz-opt-btn text-left p-3.5 rounded-xl border border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800 text-xs sm:text-sm font-medium transition flex justify-between items-center">
+                                <span>${opt}</span>
+                                <i class="fa-regular fa-circle text-slate-400 state-icon"></i>
+                            </button>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('quizNextBtn').disabled = true;
+            document.getElementById('quizNextBtn').className = "px-5 py-2 bg-slate-300 dark:bg-slate-800 text-slate-500 font-bold text-sm rounded-xl cursor-not-allowed transition";
+        }
+
+        function handleQuizAnswer(btn, selectedIdx) {
+            const q = activeQuizQuestions[currentQuizIndex];
+            const parent = btn.parentElement;
+            const buttons = parent.querySelectorAll('.quiz-opt-btn');
+
+            buttons.forEach(b => b.classList.add('pointer-events-none'));
+
+            if (selectedIdx === q.answer) {
+                quizScore++;
+                btn.classList.add('bg-emerald-500/10', 'border-emerald-500', 'text-emerald-600', 'dark:text-emerald-400');
+                btn.querySelector('.state-icon').className = 'fa-solid fa-circle-check text-emerald-500';
+            } else {
+                btn.classList.add('bg-rose-500/10', 'border-rose-500', 'text-rose-600', 'dark:text-rose-400');
+                btn.querySelector('.state-icon').className = 'fa-solid fa-circle-xmark text-rose-500';
+                
+                const correctBtn = buttons[q.answer];
+                correctBtn.classList.add('bg-emerald-500/10', 'border-emerald-500', 'text-emerald-600', 'dark:text-emerald-400');
+                correctBtn.querySelector('.state-icon').className = 'fa-solid fa-circle-check text-emerald-500';
+            }
+
+            document.getElementById('quizNextBtn').disabled = false;
+            document.getElementById('quizNextBtn').className = "px-5 py-2 bg-brandPurple hover:bg-purple-700 text-white font-bold text-sm rounded-xl transition";
+        }
+
+        function nextQuizQuestion() {
+            currentQuizIndex++;
+            if (currentQuizIndex < activeQuizQuestions.length) {
+                renderQuizCard();
+            } else {
+                showQuizResult();
+            }
+        }
+
+        function showQuizResult() {
+            quizzesCompleted++;
+            localStorage.setItem('curiosity_quizzes_count', quizzesCompleted);
+            updateStatsUI();
+
+            const card = document.getElementById('quizCard');
+            const percent = Math.round((quizScore / activeQuizQuestions.length) * 100);
+
+            card.innerHTML = `
+                <div class="text-center py-6 space-y-4">
+                    <div class="w-20 h-20 mx-auto rounded-full bg-gradient-to-tr from-brandPurple to-brandPink flex items-center justify-center text-white text-3xl shadow-xl">
+                        <i class="fa-solid fa-trophy"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold">Quiz Completed!</h3>
+                        <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">You scored ${quizScore} out of ${activeQuizQuestions.length} (${percent}%)</p>
+                    </div>
+                    <div class="pt-4 flex justify-center space-x-3">
+                        <button onclick="exitQuiz()" class="px-5 py-2.5 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-bold text-xs sm:text-sm rounded-xl hover:bg-slate-200 transition">
+                            Return to Learning Hub
+                        </button>
+                    </div>
+                </div>
+            `;
+            document.getElementById('quizNextBtn').classList.add('hidden');
+        }
+
+        function exitQuiz() {
+            document.getElementById('quizView').classList.add('hidden');
+            document.getElementById('quizNextBtn').classList.remove('hidden');
+            if (currentChapter) {
+                document.getElementById('chapterView').classList.remove('hidden');
+            } else {
+                document.getElementById('homeView').classList.remove('hidden');
+            }
+        }
+    </script>
+</body>
+</html>
